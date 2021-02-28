@@ -26,15 +26,27 @@ HEADERS += \
 
 FORMS += \
     mainwindow.ui
-#INCLUDEPATH += D:/opencv-4.1.2-x86/include \
-#               D:/opencv-4.1.2-x86/include/opencv \
-#               D:/opencv-4.1.2-x86/include/opencv2
-#LIBS += D:/opencv-4.1.2-x86/x86/mingw/lib/libopencv_*
 
-INCLUDEPATH += /usr/local/include/opencv4 \
-               /usr/local/include/opencv4/opencv \
-               /usr/local/include/opencv4/opencv2
-LIBS += /usr/local/lib/libopencv_*
+msvc{
+    INCLUDEPATH += D:/opencv-4.1.2-MSVC-X64/include \
+                   D:/opencv-4.1.2-MSVC-X64/include/opencv2
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_stitching412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_video412
+    #LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_videoio_ffmpeg412_64
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_videoio412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_calib3d412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_core412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_dnn412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_features2d412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_flann412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_gapi412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_highgui412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_imgcodecs412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_imgproc412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_ml412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_objdetect412
+    LIBS += -LD:/opencv-4.1.2-MSVC-X64/x64/vc16/lib/ -lopencv_photo412
+}
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
